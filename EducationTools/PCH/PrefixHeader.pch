@@ -1,0 +1,87 @@
+//
+//  PrefixHeader.pch
+//  EducationTools
+//
+//  Created by 王一成 on 2018/4/26.
+//  Copyright © 2018年 Yicheng.Wang. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Header.h"
+
+#define LabelFont [UIFont systemFontOfSize:13]
+//屏幕
+#define SCREEN_H  [UIScreen mainScreen].bounds.size.height
+#define SCREEN_W  [UIScreen mainScreen].bounds.size.width
+#define HYStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+//一天的长度
+#define ONEDay (24*60*60)
+//颜色
+#define RGBA(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+
+#define RGB(r, g, b)                        RGBA(r, g, b, 1.0f)
+
+#define kUIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+//weak
+#define WeakObj(o) autoreleasepool{} __weak typeof(o) o##Weak = o;
+#define StrongObj(o) autoreleasepool{} __strong typeof(o) o = o##Weak;
+/**
+ *  自定义单例.h
+ */
+#define DEFINE_SINGLETON_FOR_HEADER(className) \
+\
++ (className *)shared##className;
+/**
+ *  自定义单例.m
+ */
+#define DEFINE_SINGLETON_FOR_CLASS(className) \
+\
++ (className *)shared##className { \
+static className *shared##className = nil; \
+static dispatch_once_t onceToken; \
+dispatch_once(&onceToken, ^{ \
+shared##className = [[self alloc] init]; \
+}); \
+return shared##className; \
+}
+//DEBUG
+#if DEBUG
+#define DLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define DLog(...)
+#endif
+
+//document路径
+#define DOCUMENTPATH [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+#define kRect(_x, _y, _w, _h) CGRectMake((_x), (_y), (_w), (_h))
+#define ImageNamed(_name)     [UIImage imageNamed:_name]
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define WeakObj(o) autoreleasepool{} __weak typeof(o) o##Weak = o;
+#define StrongObj(o) autoreleasepool{} __strong typeof(o) o = o##Weak;
+
+#define Authcode @"http://140.143.196.13:2500/user/authcode"
+#define Register @"http://140.143.196.13:2500/user/register"
+#define Login @"http://140.143.196.13:2500/user/login"
+#define QEmployees @"http://140.143.196.13:2500/query/employees"
+#define QStudent @"http://140.143.196.13:2500/query/student"
+#define QSchool @"http://140.143.196.13:2500/query/school"
+#define QGoods @"http://140.143.196.13:2500/query/goods"
+#define QClass @"http://140.143.196.13:2500/query/class"
+#define AStudent @"http://140.143.196.13:2500/added/student"
+#define ASchool @"http://140.143.196.13:2500/added/school"
+#define AClass @"http://140.143.196.13:2500/added/class"
+#define DEmployees @"http://140.143.196.13:2500/delete/employees"
+#define DShcool @"http://140.143.196.13:2500/delete/school"
+#define DClass @"http://140.143.196.13:2500/delete/class"
+#define DStudnet @"http://140.143.196.13:2500/delete/student"
+#define ChangeEmployees @"http://140.143.196.13:2500/modif/employees"
+#define ChangeGoods @"http://140.143.196.13:2500/modif/goods"
+#endif /* PrefixHeader_pch */

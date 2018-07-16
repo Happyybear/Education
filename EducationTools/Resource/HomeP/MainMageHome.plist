@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   MainMageHome.plist
+   EducationTools
+
+   Created by 王一成 on 2018/7/9.
+   Copyright (c) 2018年 Yicheng.Wang. All rights reserved.
+-->
+<plist version="1.0">
+    <array>
+        <dict>
+            <key>title</key>
+            <string>报帐审核</string>
+            <key>picture</key>
+            <string>img_1</string>
+        </dict>
+        <dict>
+            <key>title</key>
+            <string>财务审批</string>
+            <key>picture</key>
+            <string>img_2</string>
+        </dict>
+        <dict>
+            <key>title</key>
+            <string>校区管理</string>
+            <key>picture</key>
+            <string>img_8</string>
+        </dict>
+        <dict>
+            <key>title</key>
+            <string>财务报表</string>
+            <key>picture</key>
+            <string>img_7</string>
+        </dict>
+        <dict>
+            <key>title</key>
+            <string>数据统计</string>
+            <key>picture</key>
+            <string>img_6</string>
+        </dict>
+        <dict>
+            <key>title</key>
+            <string>库存管理</string>
+            <key>picture</key>
+            <string>img_9</string>
+        </dict>
+    </array>
+</plist>
